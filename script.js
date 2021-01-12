@@ -10,3 +10,20 @@ var currentUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + citInput
 var fiveDayUrl ="https://api.openweathermap.org/data/2.5/forecast?q=" + citInput + "&appid=" + apiKey; 
 
 console.log (currentUrl);
+
+
+$.ajax({
+    url: currentUrl,
+    method: "GET"
+}).then(function(response){
+
+
+});
+
+
+$.ajax({
+    url: fiveDayUrl,
+    method: "GET"
+}).then(function(response){
+
+});
