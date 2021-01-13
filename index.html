@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,35 +13,143 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-        <!--Header-->
-  <header class="heading"><h1 class="wd">Weather Dashboard</h1></header>
+     <!--Heading/Navbar-->
+     <nav class="navbar">
 
-  <aside class= "container">
-      
-      <div>
-      <h2>Search For A City:</h2>
-      </div>
-      <!--Start of input-->
-      <div class ="cityName">
-          <input type="text" id="cityInput" placeholder="Enter City Name">
-          <button id="searchBtn"  type="button" >Search</button>
-      </div>
-        <!--List of citys searched-->
-      <div class= "cityDiv">
-          <ul id="cityList">
+        <span class="navbar-brand mb-0 h1 w-100 h-200 text-center">Weather-Dashboard</span>
 
-           
-          </ul>
-      </div>
-      <!--End of input-->
+    </nav>
 
-      <div>
+    <!-- Container-->
 
-      </div>
+    <div class="container-md m-5">
+
+        <div class="row">
+
+            <aside class="col-md-3 sc">
+
+                <h2 class="asideHead">Search for a city:</h2>
+                <hr>
+                <div class="mb-3">
+
+                    <input id="cityInput" type="text" placeholder="Enter City Name">
+
+                    <div class="input-group-append">
+                        <!--Button for search-->
+                        <button  type= "button" id="searchBtn">
+
+                        </button>
+
+                    </div>
+                    <!--list of citys from local storage-->
+                    <div>
+                        <div class= "cityDiv">
+                            <ul id="cityList">
+                  
+                             
+                            </ul>
+                        </div>
+                  
+                    </div>
+                </div>
+                
+            </aside>
+            <!-- Container for displaying local weather-->
+            <div class="col-md-9 ">
+
+                <div class="row cw">
+
+                    <div class="col-md-10 border border-dark m-2 rounded" id="lWeather">
+
+                        <div>
+
+                            <div class="col-md-12">
+
+                                <p class="clw"> Current Local Weather:</p>
+                                <hr>
+                                <span id="cityName" class="cityName align-middle"></span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <p id="temperature"></p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <p id="humidity"></p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <p id="windSpeed"></p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-md-12 d-flex">
+
+                                <p id="UVIndex"></p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--5-day forecast-->
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <h3 class="mb-3 mt-1">5-Day Forecast:</h3>
+
+                    </div>
+
+                </div>
+
+                <!-- five day weather conditions for that city-->
+                <div class="row mx-2">
+
+                    <div class="col-md-2 forecast bg-primary text-white ml-1 mb-3 rounded"></div>
+
+                    <div class="col-md-2 forecast bg-primary text-white ml-1 mb-3 rounded"></div>
+
+                    <div class="col-md-2 forecast bg-primary text-white ml-1 mb-3 rounded"></div>
+
+                    <div class="col-md-2 forecast bg-primary text-white ml-1 mb-3 rounded"></div>
+
+                    <div class="col-md-2 forecast bg-primary text-white ml-1 mb-3 rounded"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 
-
-    </aside>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

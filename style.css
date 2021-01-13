@@ -1,40 +1,90 @@
-body{
-    background: url("./assets\vol.jpg");
+
+body {
+
     background-color: aquamarine;
     
+
 }
 
-.heading {
-    width: 100%;
-    height: 100px;
-    color: rgb(74, 180, 241);
-    margin-top: 20;
-    text-align: center;
-    /*background-color: #0400ffd5;*/
+aside {
+
+    background-color: rgb(140, 173, 202);
+    width: 300px;
+    height: 800px;
+    border: 1px solid black;
+    margin: 0 0 0 0;
+}
+.sc {
+border-radius: 20px;    
+width: 200px;
+margin:-48px 0 0 -47px;
+
+}
+
+button {
+width: 25px;
+height: 25px;
+border-radius: 50%;
+}
+
+.asideHead{
+font-size: 25px;
+
+}
+
+
+.navbar {
     background-image: linear-gradient(rgb(0, 89, 255), rgb(59, 113, 134));
-    padding-top: 20px;  
+    border: 1px solid black;
+
 }
+
+.navbar-brand {
+    font-size: 36px;
+}
+
+.clw{
+    font-weight: bold;
+}
+
+.search-header {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cw {
+width: 800px;
+height: 400px;
+margin: 0 0 0 0;
+
+}
+
+
+/*style for cityName class*/
+
 .cityName {
-
-    margin: 15px 0 0 0;
-
+    font-size: 25px;
 }
 
-.container {
 
-background-color: rgb(140, 173, 202);
-width: 300px;
-height: 800px;
-border: 1px solid black;
-margin-left: 0px;
+/*style for forecase date*/
 
+.forecast-date {
+    font-size: 18px;
 }
 
-.cityDiv {
-
-margin: 25px 0 0 0;
-
+.today {
+    font-weight: bold;
+    padding-top: 10px;
 }
-    
-   
 
+#lWeather {
+    background-color: rgb(76, 92, 241);
+}
+
+
+/*style for horizontal rule*/
+
+#hori {
+    background-color: black;
+}
