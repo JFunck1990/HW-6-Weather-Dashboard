@@ -7,6 +7,7 @@ var apiKey = "f0a0222c2ff140f616209ec3a5abfc21";
 
 
 
+
 // search button function
 searchBtn.on("click", function(){
 
@@ -17,7 +18,6 @@ searchBtn.on("click", function(){
     weatherData(citInput);
     $("#cityInput").val("");
 
-});
 
 function weatherData(cityName){
     displayCity();
@@ -34,9 +34,37 @@ $.ajax({
     url: currentUrl,
     method: "GET"
 }).then(function(response){
-
+    let tempF = (response.main.temp - 273.15) * 1.80 + 32;
+  // city name and time
+    console.log("the name is: " + response.name);
+$("#cityName").append(response.name);
+// current Temp
+$("#temperature").append("Temperature: " + tempF.toFixed(0) + "F")
+//  current humidity
+$("#humidity").append("Humidity: " + response.main.humidity + "%");
+// wind speed
+$("#windSpeed").append("Wind Speed: " + response.wind.speed + " MPH" );
 
 });
+
+// uvIndex
+var lat = response.coord.lat;
+var lon = response.coord.lon;
+
+var uvQueryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+
+
+$.ajax({
+    url:uvQueryURL,
+    method: "Get"
+}).then(function(response){
+    console.log("UV Response: " + response);
+    $("#uvIndex").append("UV Index: ");
+
+   
+});
+
+
 
 // five day weather 
 $.ajax({
@@ -72,5 +100,6 @@ $(document).on("click", ".cityBtn", function(e){
 })
 
 displayCity();
+});
 
 });
