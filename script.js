@@ -59,7 +59,7 @@ for(var i = 0; i < data.length; i++){
 
     var cityName = $("#cityList").addClass("cityL");
 
-    cityName.append("<button data-city="+data[i]+" class='cityBtn'>" + data[i] + "</button>");
+    cityName.append("<button data-city="+data[i]+" class='cityBtn'>" + data[i] + "</button>" + "<br>");
 }
 }
 
@@ -67,7 +67,7 @@ $(document).on("click", ".cityBtn", function(e){
     e.preventDefault();
     console.log("Inside cityBtn");
     var city = $(this).attr("data-city");
-    console.log("City Name: "+city);
+    console.log("City Name: "+ city);
     weatherData(city);
 })
 
