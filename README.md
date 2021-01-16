@@ -1,2 +1,7 @@
-# HW-6-Weather-Dashboard
+Jack-s Weather-Dashboard
 # 06 Server-Side APIs: Weather Dashboard
+Welcome to my Weather Dashboard!
+what do you need to do?
+1. Enter your city of choice in the in put
+2. hit enter and your current and five day weather will pop-up.
+3. hit clear and try again if you want.
