@@ -10,6 +10,7 @@ var apiKey = "f0a0222c2ff140f616209ec3a5abfc21";
 
 // search button function
 searchBtn.on("click", function(){
+    
 
     var citInput = $("#cityInput").val();
     var data = JSON.parse(localStorage.getItem("cities")) || [];
@@ -34,10 +35,12 @@ $.ajax({
     url: currentUrl,
     method: "GET"
 }).then(function(response){
+   var timeUTC = new Date(response.dt * 1000);
+
     let tempF = (response.main.temp - 273.15) * 1.80 + 32;
   // city name and time
-    console.log("the name is: " + response.name);
-$("#cityName").append(response.name);
+    console.log("the name is: " + response.name + timeUTC.toLocaleDateString("en-US"));
+$("#cityName").append(response.name + ": " + "("+ timeUTC.toLocaleDateString("en-US")+ ")");
 // current Temp
 $("#temperature").append("Temperature: " + tempF.toFixed(0) + "F")
 //  current humidity
@@ -45,26 +48,31 @@ $("#humidity").append("Humidity: " + response.main.humidity + "%");
 // wind speed
 $("#windSpeed").append("Wind Speed: " + response.wind.speed + " MPH" );
 
-});
 
-// uvIndex
 var lat = response.coord.lat;
 var lon = response.coord.lon;
 
-var uvQueryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
+
+
+// uvIndex
+
+var uvQueryURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey;
 
 
 $.ajax({
     url:uvQueryURL,
     method: "Get"
-}).then(function(response){
-    console.log("UV Response: " + response);
-    $("#uvIndex").append("UV Index: ");
+}).then(function(uvresponse){
+   // var lat = response.coord.lat;
+    //var lon = response.coord.lon;
+    console.log("lat: " + lat);
+    console.log("lon " + lon);
+    console.log("UV Response: " + uvresponse);
+    $("#uvIndex").append("UV Index: " + uvresponse);
 
-   
 });
 
-
+});
 
 // five day weather 
 $.ajax({
