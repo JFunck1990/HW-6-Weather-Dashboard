@@ -92,11 +92,14 @@ $(document).ready(function () {
        
         var fiveDayCl = response.list;
         var wf = $("#weatherForcast");
+       
         for (var i = 0; i < 5; i++) {
+            var container = $("<div>");
           console.log(fiveDayCl[i]);
-          wf.append("<div>" + fiveDayCl[i].dt_txt + "</div>");
-          wf.append("<div>" + fiveDayCl[i].main.temp + "</div>");
-          wf.append("<div>" + fiveDayCl[i].main.humidity + "% </div>")
+          container.append("<p class='style'>" + fiveDayCl[i].dt_txt + "</p>");
+          container.append("<p>" + fiveDayCl[i].main.temp + "</p>");
+          container.append("<p>" + fiveDayCl[i].main.humidity + "% </p>")
+          wf.append(container);
         }
       });
     }
@@ -129,7 +132,11 @@ $(document).ready(function () {
       console.log("City Name: " + city);
       weatherData(city);
     });
+    $("#clear").on("click", function(event){
+        $("#cityList").empty();
 
+
+    });
     displayCity();
   });
 });
