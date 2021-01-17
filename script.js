@@ -88,17 +88,17 @@ $(document).ready(function () {
       }).then(function (response) {
         console.log(response.list[0].main.temp);
         console.log("This is the 5 day Response: " + response);
-       // var timeUTC =response.list[0].dt_txt;
+        var timeUTC =response.list[0].dt_txt *1000;
        
         var fiveDayCl = response.list;
         var wf = $("#weatherForcast");
        
         for (var i = 0; i < 5; i++) {
-            var container = $("<div>");
+            var container = $("<div class='five col-md-2 text-white ml-1 mb-3 rounded'>");
           console.log(fiveDayCl[i]);
-          container.append("<p class='style'>" + fiveDayCl[i].dt_txt + "</p>");
-          container.append("<p>" + fiveDayCl[i].main.temp + "</p>");
-          container.append("<p>" + fiveDayCl[i].main.humidity + "% </p>")
+          container.append("<p> Date: " + fiveDayCl[i].dt_txt + "</p>");
+          container.append("<p> Temp: " + fiveDayCl[i].main.temp + "</p>");
+          container.append("<p> Humidity: " + fiveDayCl[i].main.humidity + "% </p>")
           wf.append(container);
         }
       });
@@ -132,9 +132,10 @@ $(document).ready(function () {
       console.log("City Name: " + city);
       weatherData(city);
     });
+
     $("#clear").on("click", function(event){
         $("#cityList").empty();
-
+        localStorage.clear();
 
     });
     displayCity();
