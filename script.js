@@ -5,6 +5,14 @@ $(document).ready(function () {
 
   // search button function
   searchBtn.on("click", function () {
+    $("#cityList").empty();
+        $("#temperature").empty();
+        $("#cityName").empty();
+        $("#temperature").empty();
+        $("#humidity").empty();
+        $("#windSpeed").empty();
+        $("#uvIndex").empty();
+        $("#weatherForcast").empty();
     var citInput = $("#cityInput").val();
     var data = JSON.parse(localStorage.getItem("cities")) || [];
     data.push(citInput);
@@ -134,14 +142,14 @@ $(document).ready(function () {
     });
 
     $("#clear").on("click", function(event){
-        $("#cityList").empty();
-        $("#temperature").empty();
-        $("#cityName").empty();
-        $("#temperature").empty();
-        $("#humidity").empty();
-        $("#windSpeed").empty();
-        $("#uvIndex").empty();
-        $("#weatherForcast").empty();
+      $("#cityList").empty();
+      $("#temperature").empty();
+      $("#cityName").empty();
+      $("#temperature").empty();
+      $("#humidity").empty();
+      $("#windSpeed").empty();
+      $("#uvIndex").empty();
+      $("#weatherForcast").empty();
         localStorage.clear();
 
 
