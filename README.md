@@ -5,3 +5,4 @@ what do you need to do?
 1. Enter your city of choice in the in put
 2. hit enter and your current and five day weather will pop-up.
 3. hit clear and try again if you want.
+
